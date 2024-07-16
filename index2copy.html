@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile Management</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="style2copy.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="card shadow-lg">
+        <div class="card-header text-white text-center">
+          <!-- <h2>User Profile Management</h2> -->
+          <h2>Manage Your Profile</h2>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputAge">Age: <span id="ageValue">25</span></label>
+                <input
+                  type="range"
+                  class="form-control-range"
+                  id="inputAge"
+                  min="10"
+                  max="100"
+                  value="25"
+                  oninput="updateValue('ageValue', this.value)"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputGender">Gender</label>
+                <select id="inputGender" class="form-control">
+                  <option selected>Choose...</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputWeight"
+                  >Weight (kg): <span id="weightValue">70</span></label
+                >
+                <input
+                  type="range"
+                  class="form-control-range"
+                  id="inputWeight"
+                  min="30"
+                  max="150"
+                  value="70"
+                  oninput="updateValue('weightValue', this.value)"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputHeight"
+                  >Height (cm): <span id="heightValue">170</span></label
+                >
+                <input
+                  type="range"
+                  class="form-control-range"
+                  id="inputHeight"
+                  min="100"
+                  max="220"
+                  value="170"
+                  oninput="updateValue('heightValue', this.value)"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPreferences"> <h5>Activity</h5></label>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="activity"
+                  id="noExercise"
+                  value="Little/No Exercise"
+                  checked
+                />
+                <label class="form-check-label" for="noExercise">
+                  No Exercise
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="activity"
+                  id="littleExercise"
+                  value="Little Exercise"
+                />
+                <label class="form-check-label" for="littleExercise">
+                  Little Exercise
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="activity"
+                  id="moderateExercise"
+                  value="Moderate Exercise"
+                />
+                <label class="form-check-label" for="moderateExercise">
+                  Moderate Exercise (3-5 days/week)
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="activity"
+                  id="highExercise"
+                  value="Very Active"
+                />
+                <label class="form-check-label" for="highExercise">
+                  Very Active (6-7 days/week)
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="activity"
+                  id="veryHighExercise"
+                  value="Extra Active"
+                />
+                <label class="form-check-label" for="veryHighExercise">
+                  Extra Active (very active & physical job)
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputAllergies"> <h5>Allergies</h5></label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputAllergies"
+                placeholder="e.g., Peanuts, Dairy"
+              />
+            </div>
+            <div class="form-group">
+              <label for="inputGoals"> <h5>Health Goals</h5></label>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="weightGoal"
+                  id="maintainWeight"
+                  value="maintain"
+                  checked
+                />
+                <label class="form-check-label" for="maintainWeight">
+                  Maintain weight
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="weightGoal"
+                  id="mildWeightLoss"
+                  value="mild"
+                />
+                <label class="form-check-label" for="mildWeightLoss">
+                  Mild weight loss
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="weightGoal"
+                  id="weightLoss"
+                  value="loss"
+                />
+                <label class="form-check-label" for="weightLoss">
+                  Weight loss
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="weightGoal"
+                  id="extremeWeightLoss"
+                  value="extreme"
+                />
+                <label class="form-check-label" for="extremeWeightLoss">
+                  Extreme weight loss
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputPreferences"> <h5>Meals per day</h5></label>
+              <br />
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="meals"
+                  id="3meal"
+                  value="3-meal"
+                  checked
+                />
+                <label class="form-check-label" for="3meal"> 3 </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="meals"
+                  id="4meal"
+                  value="4-meal"
+                />
+                <label class="form-check-label" for="4meal"> 4 </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="meals"
+                  id="5meal"
+                  value="5-meal"
+                />
+                <label class="form-check-label" for="5meal"> 5 </label>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <button id="submit-btn" type="submit" class="btn btn-lg">
+                Update Profile
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      function updateValue(id, value) {
+        document.getElementById(id).textContent = value;
+      }
+    </script>
+  </body>
+</html>
